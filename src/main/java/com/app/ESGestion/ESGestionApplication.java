@@ -1,13 +1,14 @@
-package com.app.esgestion;
+package com.app.ESGestion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EsGestionApplication {
+public class ESGestionApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EsGestionApplication.class, args);
+
+		SpringApplication.run(ESGestionApplication.class, args);
 	}
 
 }
