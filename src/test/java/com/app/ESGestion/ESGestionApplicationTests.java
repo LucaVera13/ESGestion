@@ -1,10 +1,10 @@
-package com.app.esgestion;
+package com.app.ESGestion;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EsGestionApplicationTests {
+class ESGestionApplicationTests {
 
 	@Test
 	void contextLoads() {

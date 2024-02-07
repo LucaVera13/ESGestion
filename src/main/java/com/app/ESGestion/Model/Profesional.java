@@ -1,18 +1,19 @@
 package com.app.ESGestion.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter@Setter
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
+@Getter
+@Setter
 public class Profesional {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long idProf;
     private String profesion;
     private String nombreCompleto;
     private String matriculaCptba;
@@ -21,12 +22,19 @@ public class Profesional {
     private String numTelefono;
     private String email;
 
+    @OneToMany(mappedBy = "profesional")
+    private List<Cliente> clientes = new ArrayList<>();
+
+    @OneToMany(mappedBy = "profesional")
+    private List<Archivo> archivos = new ArrayList<>();
+
+
     public Profesional() {
     }
 
     public Profesional(Long id, String profesion, String nombreCompleto, String matriculaCptba,
                        String matriculaMunicipal, String domicilio, String numTelefono, String email) {
-        this.id = id;
+        this.idProf = id;
         this.profesion = profesion;
         this.nombreCompleto = nombreCompleto;
         this.matriculaCptba = matriculaCptba;
@@ -35,4 +43,5 @@ public class Profesional {
         this.numTelefono = numTelefono;
         this.email = email;
     }
+
 }
